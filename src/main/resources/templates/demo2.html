@@ -24,5 +24,10 @@
     Session: <span th:text="${session.session}"></span><br />
     Application: <span th:text="${application.application}"></span><br />
 
+    <h3>Thymeleaf URLs</h3>
+    <a th:href="@{~/demo}">Visit Demo Page</a><br />
+    <a th:href="@{~/demo(id=1, name=eric)}">Visit Demo page With Parameter</a>
+
+
 </body>
 </html>
