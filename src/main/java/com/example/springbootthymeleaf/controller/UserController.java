@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +44,17 @@ public class UserController {
         list.add(new User(2, "Jerry", 29));
         list.add(new User(3, "Nancy", 27));
         model.addAttribute("list", list);
+        return "demo2";
+    }
+
+
+    @RequestMapping("demo3")
+    public String demo3(HttpServletRequest request, Model model){
+        request.setAttribute("request", "request data");
+
+        request.getSession().setAttribute("session", "session data");
+
+        request.getSession().getServletContext().setAttribute("application", "application data");
         return "demo2";
     }
 }
